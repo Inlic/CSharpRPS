@@ -21,12 +21,7 @@ ______           _     ______                       _____      _
       Console.WriteLine("Choose Your Input (Rock, Paper, Scissors)");
       var choice = Console.ReadLine();
       GameController gc;
-      switch (choice)
-      {
-        default:
-          gc = new GameController(choice);
-          break;
-      }
+      gc = new GameController(choice);
       gc.Run();
 
     }
