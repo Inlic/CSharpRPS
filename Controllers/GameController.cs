@@ -28,7 +28,7 @@ namespace CSharpRPS.Controllers
       }
       else
       {
-        System.Console.WriteLine("\nRock, Paper, Scissors or quit?");
+        Console.WriteLine("\nRock, Paper, Scissors or quit?");
         PlayerChoice = Console.ReadLine().ToLower();
         Console.Clear();
       }
