@@ -28,14 +28,15 @@ namespace CSharpRPS.Controllers
       }
       else
       {
-        System.Console.WriteLine("Rock, Paper, Scissors or quit?");
+        System.Console.WriteLine("\nRock, Paper, Scissors or quit?");
         PlayerChoice = Console.ReadLine().ToLower();
+        Console.Clear();
       }
       switch (PlayerChoice.ToLower())
       {
         case "quit":
           Playing = false;
-          Console.WriteLine("Game Ended");
+          Console.WriteLine("\nGame Ended");
           break;
         case "rock":
         case "paper":
@@ -43,7 +44,7 @@ namespace CSharpRPS.Controllers
           Play();
           break;
         default:
-          Console.WriteLine("Invalid Command");
+          Console.WriteLine("\nInvalid Command");
           break;
       }
     }
@@ -64,20 +65,20 @@ namespace CSharpRPS.Controllers
           CompChoice = "paper";
           break;
       }
-      Console.WriteLine($"Player choice is: {PlayerChoice} and Computer choice is: {CompChoice}");
+      Console.WriteLine($"\nPlayer choice is: {PlayerChoice} and Computer choice is: {CompChoice}");
       if (PlayerChoice == CompChoice)
       {
-        Console.WriteLine("Tie");
+        Console.WriteLine("\nTie");
         Prompt = true;
       }
       else if ((PlayerChoice == "paper" && CompChoice == "rock") || (PlayerChoice == "scissors" && CompChoice == "paper") || (PlayerChoice == "rock" && CompChoice == "scissors"))
       {
-        Console.WriteLine("You Win");
+        Console.WriteLine("\nYou Win");
         Prompt = true;
       }
       else
       {
-        Console.WriteLine("You Lose");
+        Console.WriteLine("\nYou Lose");
         Prompt = true;
       }
     }
