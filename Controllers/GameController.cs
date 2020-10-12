@@ -15,7 +15,6 @@ namespace CSharpRPS.Controllers
 
     public void Run()
     {
-      Prompt = false;
       while (Playing)
       {
         GetUserInput();
@@ -25,15 +24,14 @@ namespace CSharpRPS.Controllers
     {
       if (PlayerChoice != null && Prompt == false)
       {
-        input = PlayerChoice.ToLower();
         Prompt = true;
       }
       else
       {
         System.Console.WriteLine("Rock, Paper, Scissors or quit?");
-        input = Console.ReadLine().ToLower();
+        PlayerChoice = Console.ReadLine().ToLower();
       }
-      switch (input)
+      switch (PlayerChoice.ToLower())
       {
         case "quit":
           Playing = false;
@@ -70,14 +68,17 @@ namespace CSharpRPS.Controllers
       if (PlayerChoice == CompChoice)
       {
         Console.WriteLine("Tie");
+        Prompt = true;
       }
       else if ((PlayerChoice == "paper" && CompChoice == "rock") || (PlayerChoice == "scissors" && CompChoice == "paper") || (PlayerChoice == "rock" && CompChoice == "scissors"))
       {
         Console.WriteLine("You Win");
+        Prompt = true;
       }
       else
       {
         Console.WriteLine("You Lose");
+        Prompt = true;
       }
     }
 
