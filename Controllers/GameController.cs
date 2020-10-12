@@ -69,17 +69,14 @@ namespace CSharpRPS.Controllers
       if (PlayerChoice == CompChoice)
       {
         Console.WriteLine("\nTie");
-        Prompt = true;
       }
       else if ((PlayerChoice == "paper" && CompChoice == "rock") || (PlayerChoice == "scissors" && CompChoice == "paper") || (PlayerChoice == "rock" && CompChoice == "scissors"))
       {
         Console.WriteLine("\nYou Win");
-        Prompt = true;
       }
       else
       {
         Console.WriteLine("\nYou Lose");
-        Prompt = true;
       }
     }
 
